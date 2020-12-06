@@ -39,5 +39,9 @@ describe ('translate', function() {
     it("word with three consonant before vowel", function() {
         expect(translate('thrasher')).toEqual('asherthray');
     })
+
+    it("send uppercases in to lowercase", function() {
+        expect(translate('CHRISTmas')).toEqual('istmaschray');
+    })
 })
 

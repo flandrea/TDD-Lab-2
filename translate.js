@@ -1,13 +1,14 @@
 function translate(word) {
-    let vowels = ['a', 'e', 'i', 'o', 'u','A', 'E', 'I', 'O', 'U'];
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
     let newWord = "";
-    if (vowels.indexOf(word[0]) > -1) {
-        newWord = word + "way";
+    let lowerCaseWord = word.toLowerCase();
+    if (vowels.indexOf(lowerCaseWord[0]) > -1) {
+        newWord = lowerCaseWord + "way";
         return newWord;
     } else {
-        let firstVowel = word.match(/[aeiouAEIOU]/g) || 0;
-        let vowel = word.indexOf(firstVowel[0]);
-        newWord = word.substring(vowel) + word.substring(0, vowel) + "ay";
+        let firstVowel = lowerCaseWord.match(/[aeiou]/g) || 0;
+        let vowel = lowerCaseWord.indexOf(firstVowel[0]);
+        newWord = lowerCaseWord.substring(vowel) + lowerCaseWord.substring(0, vowel) + "ay";
         return newWord;
     }
 }
